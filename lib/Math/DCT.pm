@@ -10,7 +10,7 @@ Math::DCT - 1D and NxN 2D Fast Discreet Cosine Transforms (DCT-II)
 
 =head1 SYNOPSIS
 
-    use Math::DCT;
+    use Math::DCT qw/dct dct1d dct2d/;
 
     my $dct1d = dct([[1,2,3,4]]);
     $dct1d = dct1d([1,2,3,4]);
@@ -132,6 +132,15 @@ sub dct2d {
     my @result = unpack "d".($sz*$sz), $pack;
     return \@result;
 }
+
+
+=head1 USAGE NOTES
+
+The C functions are not exported, but theoretically you could use them directly
+if you do your own C<pack/unpack>. The fast versions for power-of-2 size arrays
+are C<fast_dct_1d> and C<fast_dct_2d>, while the generic versions are C<dct_1d>
+and C<dct_2d>. First argument is a C<char *> (use C<pack "dN">), second is the
+size N.
 
 =head1 ACKNOWLEDGEMENTS
 
