@@ -1,3 +1,4 @@
+use Test2::Tools::Compare 'float';
 use Test2::V0;
 
 use Math::DCT ':all';

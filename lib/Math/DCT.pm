@@ -20,11 +20,11 @@ Math::DCT - 1D and NxN 2D Fast Discreet Cosine Transforms (DCT-II)
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 require XSLoader;
 XSLoader::load('Math::DCT', $VERSION);
@@ -45,12 +45,13 @@ $EXPORT_TAGS{all} = [@EXPORT_OK];
 An unscaled DCT-II implementation for 1D and NxN 2D in XS. For array sizes which
 are a power of 2, a fast algorithm described by Lee is used (with the addition of
 a coefficient table that makes it even faster than the most common implementations
-of this algorithm).
+of it).
 
 The module was written for a perceptual hash project that needed 32x32 DCT-II,
-and on a 2.5GHz 2015 Macbook Pro over 11500/s are processed. There is no specifically
-optimized algorithm for the common 8x8 DCT-II, so specialized software will be
-faster for that (still, a respectable 185000/s is achieved on the same CPU).
+and on a 2.5GHz 2015 Macbook Pro over 11500/s per thread are processed. There is
+currently no specifically optimized path for the common 8x8 DCT-II, so specialized
+software will be faster for that (for reference about 185000/s per thread is
+achieved on the same CPU using the dct2d function).
 
 =head1 METHODS
  
