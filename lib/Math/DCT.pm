@@ -20,11 +20,11 @@ Math::DCT - 1D and NxN 2D Fast Discreet Cosine Transforms (DCT-II)
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 require XSLoader;
 XSLoader::load('Math::DCT', $VERSION);
