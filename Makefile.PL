@@ -16,7 +16,8 @@ my %WriteMakefileArgs = (
     TEST_REQUIRES => {
         'Test::More'              => '0',
         'Test2::Tools::Compare'   => '0',
-        'Test2::Tools::Exception' => '0'
+        'Test2::Tools::Exception' => '0',
+        'Test2::V0'               => '0'
     },
     PREREQ_PM => {
         "XSLoader" => '0'
